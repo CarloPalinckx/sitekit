@@ -1,25 +1,48 @@
 import React, { FC } from 'react';
 import { storiesOf } from '@storybook/react';
 import chroma from 'chroma-js';
+import Flex from '../src/components/Flex';
 
 type Props = {
     primaryColor: string;
     secondaryColor: string;
 };
 
-const Scale = (props: { color: string; size: number }) => {
+type ScaleProps = {
+    color: string;
+    size: number;
+    curve?: number;
+    direction?: 'both' | 'down' | 'up';
+};
+
+const Scale: FC<ScaleProps> = props => {
     const c = chroma(props.color);
     const scale = [c.hex()];
+    const curve = props.curve || 0.25;
 
     if (props.size % 2 !== 1) {
         throw new Error('Only odd sizes can be used to generate a scale');
     }
 
-    const splitSize = (props.size - 1) / 2;
+    if (props.direction === undefined || props.direction === 'both') {
+        const splitSize = (props.size - 1) / 2;
 
-    for (let i = 1; i < splitSize + 1; i++) {
-        scale.push(c.darken(i * 0.25).hex());
-        scale.unshift(c.brighten(i * 0.25).hex());
+        for (let i = 1; i < splitSize + 1; i++) {
+            scale.push(c.darken(i * curve).hex());
+            scale.unshift(c.brighten(i * curve).hex());
+        }
+    }
+
+    if (props.direction === 'up') {
+        for (let i = 1; i < props.size; i++) {
+            scale.push(c.darken(i * curve).hex());
+        }
+    }
+
+    if (props.direction === 'down') {
+        for (let i = 1; i < props.size; i++) {
+            scale.unshift(c.brighten(i * curve).hex());
+        }
     }
 
     return (
@@ -33,21 +56,13 @@ const Scale = (props: { color: string; size: number }) => {
 
 const Palette: FC<Props> = props => {
     return (
-        <div>
-            <div>
-                <Scale color={props.primaryColor} size={5} />
-            </div>
-            <div>
-                <Scale color={props.secondaryColor} size={5} />
-            </div>
-            <div>
-                <Scale color={chroma.mix(props.primaryColor, '#fff', 0.8).hex()} size={3} />
-            </div>
-            <div>
-                <Scale color={chroma.mix(props.secondaryColor, '#fff', 0.8).hex()} size={3} />
-            </div>
-        </div>
+        <Flex flexDirection="column">
+            <Scale color={props.primaryColor} size={5} />
+            <Scale color={props.secondaryColor} size={5} />
+            <Scale color={chroma.mix(props.secondaryColor, '#000', 0.9).hex()} size={5} curve={0.5} direction="down" />
+            <Scale color={chroma.mix(props.secondaryColor, '#fff', 0.7).hex()} size={5} curve={0.5} direction="up" />
+        </Flex>
     );
 };
 
-storiesOf('Colors', module).add('All', () => <Palette primaryColor="hotpink" secondaryColor="cornflowerblue" />);
+storiesOf('Colors', module).add('All', () => <Palette secondaryColor="#7788EE" primaryColor="#541A8B" />);
