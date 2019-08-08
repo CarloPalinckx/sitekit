@@ -1,0 +1,19 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "parser": "typescript",
+    "tabWidth": 4,
+    "printWidth": 120,
+    "proseWrap": "never",
+    "overrides": [
+        {
+            "files": ".prettierrc",
+            "options": { "parser": "json" }
+        },
+        {
+            "files": "*.graphql",
+            "options": { "parser": "graphql" }
+        }
+    ]
+}

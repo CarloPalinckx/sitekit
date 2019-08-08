@@ -1,0 +1,24 @@
+{
+  "name": "sitekit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Carlo Palinckx <carlo@mijnwebwinkel.nl>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
+    "@types/chroma-js": "^1.4.1",
+    "@types/storybook__react": "^4.0.2",
+    "babel-loader": "^8.0.6",
+    "chroma-js": "^2.0.4",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}

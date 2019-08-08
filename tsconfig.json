@@ -1,0 +1,21 @@
+
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "noEmit": true,
+      "pretty": true,
+      "jsx": "preserve",
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": true,
+      "isolatedModules": true,
+      "lib": ["dom", "esnext"],
+      "strictNullChecks": true,
+      "moduleResolution": "node",
+      "target": "esnext",
+      "noImplicitAny": true,
+      "noUnusedLocals": true,
+      "strict": true,
+      "resolveJsonModule": true
+    }
+  }
+  
