@@ -5,6 +5,7 @@ const primaryColor = '#541A8B';
 const secondaryColor = '#7788EE';
 
 const theme = {
+    spacing: 4,
     bodyFont: 'Inter',
     colors: {
         primary: scale(primaryColor, { size: 5 }),
@@ -14,11 +15,16 @@ const theme = {
             curve: 0.5,
             direction: 'down',
         }),
-        lights: scale(chroma.mix(secondaryColor, '#fff', 0.7).hex(), {
-            size: 5,
-            curve: 0.5,
-            direction: 'up',
-        }),
+        lights: scale(
+            chroma(secondaryColor)
+                .brighten(2.4)
+                .hex(),
+            {
+                size: 5,
+                curve: 0.5,
+                direction: 'up',
+            },
+        ),
     },
 };
 

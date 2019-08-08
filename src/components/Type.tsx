@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 import theme from '../../theme';
+import { box, BoxProps } from '../components/Box';
 
 export const h1 = css`
     font-family: ${theme.bodyFont};
     font-size: 96px;
     font-weight: 300;
     letter-spacing: -1.5;
+    line-height: 1.1;
 `;
 
 export const h2 = css`
@@ -62,6 +64,7 @@ export const body1 = css`
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.5px;
+    line-height: 1.25;
 `;
 
 export const body2 = css`
@@ -69,6 +72,7 @@ export const body2 = css`
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.25px;
+    line-height: 1.5;
 `;
 
 export const button = css`
@@ -101,12 +105,17 @@ const scale = {
     overline,
 };
 
-type Props = {
+type Props = BoxProps & {
     scale: keyof typeof scale;
+    color?: string;
+    align?: 'right' | 'left' | 'center';
 };
 
 const Type = styled.span<Props>`
+    ${box}
     ${props => scale[props.scale]}
+    color: ${props => props.color || ''};
+    text-align: ${props => props.align || 'left'};
 `;
 
 export default Type;
