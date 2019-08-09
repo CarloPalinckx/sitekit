@@ -72,7 +72,7 @@ export const body2 = css`
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.25px;
-    line-height: 1.5;
+    line-height: 1.6;
 `;
 
 export const button = css`

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Type from '../src/components/Type';
 import Flex from '../src/components/Flex';
 import theme from '../theme';
+import Button from '../src/components/Button';
 
 storiesOf('Typography', module)
     .add('Scale', () => {
@@ -33,7 +34,7 @@ storiesOf('Typography', module)
                     <Type color={theme.colors.darks.root()} scale="h1" align="center" margin={[0, 0, 15, 0]}>
                         Shooting an Elephant
                     </Type>
-                    <Type scale="sub1" color={theme.colors.darks.lighter(2)} margin={[0, 0, 12, 0]}>
+                    <Type scale="body1" color={theme.colors.darks.lighter(2)} margin={[0, 0, 12, 0]}>
                         Shooting an Elephant In Moulmein, in lower Burma, I was hated by large numbers of people — the
                         only time in my life that I have been important enough for this to happen to me. I was
                         sub-divisional police officer of the town, and in an aimless, petty kind of way anti-European
@@ -253,6 +254,11 @@ storiesOf('Typography', module)
                         I often wondered whether any of the others grasped that I had done it solely to avoid looking a
                         fool.
                     </Type>
+                    <Flex justifyContent="center" margin={[10, 0, 0, 0]}>
+                        <Button primary>Buy the paperback</Button>
+                        &nbsp; &nbsp;
+                        <Button>Download the PDF</Button>
+                    </Flex>
                 </Flex>
             </Flex>
         );

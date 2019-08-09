@@ -1,9 +1,11 @@
 import chroma from 'chroma-js';
 
-type Scale = Array<string> & {
+export type Scale = Array<string> & {
     root(): string;
     lighter(step: number): string;
     darker(step: number): string;
+    darkest(): string;
+    lightest(): string;
 };
 
 export const scale = (
@@ -52,13 +54,13 @@ export const scale = (
     (scale as Scale).lighter = (step: number) => {
         switch (direction) {
             case 'both': {
-                return scale[splitSize + 1 + step];
+                return scale[splitSize - step];
             }
             case 'up': {
-                return scale[1 + step];
+                return scale[step];
             }
             case 'down': {
-                return scale[scale.length - step];
+                return scale[scale.length - 1 - step];
             }
         }
     };
@@ -66,13 +68,41 @@ export const scale = (
     (scale as Scale).darker = (step: number) => {
         switch (direction) {
             case 'both': {
-                return scale[splitSize + 1 - step];
+                return scale[splitSize + step];
             }
             case 'up': {
-                return scale[scale.length - step];
+                return scale[scale.length - 1 - step];
             }
             case 'down': {
-                return scale[1 + step];
+                return scale[step];
+            }
+        }
+    };
+
+    (scale as Scale).darkest = () => {
+        switch (direction) {
+            case 'both': {
+                return scale[scale.length - 1];
+            }
+            case 'up': {
+                return scale[0];
+            }
+            case 'down': {
+                return scale[scale.length - 1];
+            }
+        }
+    };
+
+    (scale as Scale).lightest = () => {
+        switch (direction) {
+            case 'both': {
+                return scale[0];
+            }
+            case 'up': {
+                return scale[scale.length - 1];
+            }
+            case 'down': {
+                return scale[0];
             }
         }
     };
