@@ -34,24 +34,25 @@ storiesOf('Typography', module)
                     <Type color={theme.colors.darks.root()} scale="h1" align="center" margin={[0, 0, 15, 0]}>
                         Shooting an Elephant
                     </Type>
-                    <Type scale="body1" color={theme.colors.darks.lighter(2)} margin={[0, 0, 12, 0]}>
+                    <Type scale="sub1" align="center" color={theme.colors.darks.root()} margin={[0, 0, 12, 0]}>
                         Shooting an Elephant In Moulmein, in lower Burma, I was hated by large numbers of people — the
-                        only time in my life that I have been important enough for this to happen to me. I was
-                        sub-divisional police officer of the town, and in an aimless, petty kind of way anti-European
-                        feeling was very bitter. No one had the guts to raise a riot, but if a European woman went
-                        through the bazaars alone somebody would probably spit betel juice over her dress.
+                        only time in my life that I have been important enough for this to happen to me.
                     </Type>
-                    <Type scale="body2" color={theme.colors.darks.root()}>
-                        As a police officer I was an obvious target and was baited whenever it seemed safe to do so.
-                        When a nimble Burman tripped me up on the football field and the referee (another Burman) looked
-                        the other way, the crowd yelled with hideous laughter. This happened more than once. In the end
-                        the sneering yellow faces of young men that met me everywhere, the insults hooted after me when
-                        I was at a safe distance, got badly on my nerves.
-                        <br />
-                        <br /> The young Buddhist priests were the worst of all. There were several thousands of them in
-                        the town and none of them seemed to have anything to do except stand on street corners and jeer
-                        at Europeans. All this was perplexing and upsetting. For at that time I had already made up my
-                        mind that imperialism was an evil thing and the sooner I chucked up my job and got out of it the
+                    <Type scale="body1" color={theme.colors.darks.root()} margin={[0, 0, 10, 0]}>
+                        I was sub-divisional police officer of the town, and in an aimless, petty kind of way
+                        anti-European feeling was very bitter. No one had the guts to raise a riot, but if a European
+                        woman went through the bazaars alone somebody would probably spit betel juice over her dress. As
+                        a police officer I was an obvious target and was baited whenever it seemed safe to do so. When a
+                        nimble Burman tripped me up on the football field and the referee (another Burman) looked the
+                        other way, the crowd yelled with hideous laughter. This happened more than once. In the end the
+                        sneering yellow faces of young men that met me everywhere, the insults hooted after me when I
+                        was at a safe distance, got badly on my nerves.
+                    </Type>
+                    <Type scale="body2" color={theme.colors.darks.root()} margin={[0, 0, 10, 0]}>
+                        The young Buddhist priests were the worst of all. There were several thousands of them in the
+                        town and none of them seemed to have anything to do except stand on street corners and jeer at
+                        Europeans. All this was perplexing and upsetting. For at that time I had already made up my mind
+                        that imperialism was an evil thing and the sooner I chucked up my job and got out of it the
                         better. Theoretically — and secretly, of course — I was all for the Burmese and all against
                         their oppressors, the British. As for the job I was doing, I hated it more bitterly than I can
                         perhaps make clear. In a job like that you see the dirty work of Empire at close quarters. The

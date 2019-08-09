@@ -20,8 +20,8 @@ const Button = styled.button<Props>`
     ${button}
     transition: background-color 300ms;
     cursor: pointer;
-    border-radius: 100px;
-    padding: ${theme.spacing * 3}px ${theme.spacing * 6}px;
+    border-radius: 12px;
+    padding: ${theme.spacing * 4}px ${theme.spacing * 6}px;
     appearance: none;
     background: ${opts(({ scale }) => scale.root())};
     color: #fff;
