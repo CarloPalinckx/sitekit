@@ -5,15 +5,26 @@ import { Scale } from '../lib/colors';
 import chroma from 'chroma-js';
 
 type Props = {
-    primary?: boolean;
+    cta?: boolean;
+    negative?: boolean;
 };
 
-type Opts = (mapper: (props: Props & { scale: Scale }) => string) => (props: Props) => string;
+type Opts = (mapper: (props: Props & { scale: Scale; color: string }) => string) => (props: Props) => string;
 
 const opts: Opts = mapper => props => {
-    const scale = props.primary ? theme.colors.primary : theme.colors.secondary;
+    let scale = theme.colors.themecolor;
+    let color = theme.colors.lights.lightest();
 
-    return mapper({ ...props, scale });
+    if (props.cta) {
+        scale = theme.colors.cta;
+    }
+
+    if (props.negative) {
+        scale = theme.colors.lights;
+        color = theme.colors.darks.darkest();
+    }
+
+    return mapper({ ...props, scale, color });
 };
 
 const Button = styled.button<Props>`
@@ -24,7 +35,7 @@ const Button = styled.button<Props>`
     padding: ${theme.spacing * 4}px ${theme.spacing * 6}px;
     appearance: none;
     background: ${opts(({ scale }) => scale.root())};
-    color: #fff;
+    color: ${opts(({ color }) => color)};
     border: none;
 
     &:hover {
@@ -35,8 +46,8 @@ const Button = styled.button<Props>`
 
     &:focus {
         box-shadow: ${opts(({ scale }) => {
-            return `0 0 0 4px rgba(${chroma(scale.root())
-                .alpha(0.25)
+            return `0 0 6px 4px rgba(${chroma(scale.root())
+                .alpha(0.3)
                 .rgba()
                 .join(', ')})`;
         })};

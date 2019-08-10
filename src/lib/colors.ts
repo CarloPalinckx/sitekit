@@ -71,7 +71,7 @@ export const scale = (
                 return scale[splitSize + step];
             }
             case 'up': {
-                return scale[scale.length - 1 - step];
+                return scale[step];
             }
             case 'down': {
                 return scale[step];
@@ -80,31 +80,11 @@ export const scale = (
     };
 
     (scale as Scale).darkest = () => {
-        switch (direction) {
-            case 'both': {
-                return scale[scale.length - 1];
-            }
-            case 'up': {
-                return scale[0];
-            }
-            case 'down': {
-                return scale[scale.length - 1];
-            }
-        }
+        return scale[scale.length - 1];
     };
 
     (scale as Scale).lightest = () => {
-        switch (direction) {
-            case 'both': {
-                return scale[0];
-            }
-            case 'up': {
-                return scale[scale.length - 1];
-            }
-            case 'down': {
-                return scale[0];
-            }
-        }
+        return scale[0];
     };
 
     return scale as Scale;

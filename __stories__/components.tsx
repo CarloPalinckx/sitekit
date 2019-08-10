@@ -5,9 +5,11 @@ import React from 'react';
 storiesOf('Components/Button', module).add('All', () => {
     return (
         <>
-            <Button primary>Click here</Button>
+            <Button cta>Click here</Button>
             &nbsp; &nbsp;
             <Button>Or here</Button>
+            &nbsp;&nbsp;
+            <Button negative>Click here</Button>
         </>
     );
 });

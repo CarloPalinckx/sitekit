@@ -14,6 +14,7 @@ const Flex = styled.div<Props>`
     flex-wrap: ${({ flexWrap }) => flexWrap || ''};
     flex-direction: ${({ flexDirection }) => flexDirection || ''};
     justify-content: ${({ justifyContent }) => justifyContent || ''};
+    align-items: ${({ alignItems }) => alignItems || ''};
 `;
 
 export default Flex;

@@ -7,6 +7,8 @@ export type BoxProps = {
     width?: string;
     maxWidth?: string;
     margin?: Coordinates;
+    padding?: Coordinates;
+    background?: string;
 };
 
 const coords = (coordinates: Coordinates): [number, number, number, number] => {
@@ -36,6 +38,13 @@ export const box = css<BoxProps>`
                   .map(coord => coord * theme.spacing)
                   .join('px ') + 'px'
             : ''};
+    padding: ${({ padding }) =>
+        padding
+            ? coords(padding)
+                  .map(coord => coord * theme.spacing)
+                  .join('px ') + 'px'
+            : ''};
+    background: ${({ background }) => background || ''};
 `;
 
 const Box = styled.div<BoxProps>`
