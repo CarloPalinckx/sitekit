@@ -4,7 +4,7 @@ import { box, BoxProps } from '../components/Box';
 
 export const h1 = css`
     font-family: ${theme.bodyFont};
-    font-size: 96px;
+    font-size: 76px;
     font-weight: 600;
     letter-spacing: -1.5;
     line-height: 1.1;

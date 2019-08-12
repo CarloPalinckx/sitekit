@@ -5,6 +5,7 @@
   "author": "Carlo Palinckx <carlo@mijnwebwinkel.nl>",
   "license": "MIT",
   "dependencies": {
+    "react-undraw": "^1.14.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

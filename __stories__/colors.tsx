@@ -80,7 +80,13 @@ const ScaleExample: FC<ScaleExampleProps> = props => {
                     .map((letter, index) => (index === 0 ? letter.toUpperCase() : letter))
                     .join('')}
             </Type>
-            <Type scale="sub2">- The root has a luminance of {chroma(props.scale.root()).luminance()}</Type>
+            <Type scale="sub2">
+                - The root has a luminance of&nbsp;
+                {chroma(props.scale.root())
+                    .luminance()
+                    .toPrecision(2)}
+                <br />- The suggested value is around 0.30
+            </Type>
             <Flex>
                 {props.scale.map(color => (
                     <Swatch root={color.toLowerCase() === props.scale.root().toLowerCase()} color={color} />

@@ -28,13 +28,13 @@ storiesOf('Typography', module)
         return (
             <Flex justifyContent="center">
                 <Flex maxWidth="660px" width="100%" flexDirection="column" margin={[20, 0, 30, 0]}>
-                    <Type color={theme.colors.darks.lighter(4)} scale="overline" align="center" margin={[0, 0, 3, 0]}>
+                    <Type color={theme.colors.darks.lightest()} scale="overline" align="center" margin={[0, 0, 3, 0]}>
                         George Orwell
                     </Type>
-                    <Type color={theme.colors.darks.root()} scale="h1" align="center" margin={[0, 0, 15, 0]}>
+                    <Type color={theme.colors.darks.lighter(1)} scale="h1" align="center" margin={[0, 0, 15, 0]}>
                         Shooting an Elephant
                     </Type>
-                    <Type scale="sub1" align="center" color={theme.colors.darks.root()} margin={[0, 0, 12, 0]}>
+                    <Type scale="sub1" align="center" color={theme.colors.darks.lighter(3)} margin={[0, 0, 12, 0]}>
                         Shooting an Elephant In Moulmein, in lower Burma, I was hated by large numbers of people — the
                         only time in my life that I have been important enough for this to happen to me.
                     </Type>

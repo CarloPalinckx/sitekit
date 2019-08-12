@@ -9,6 +9,7 @@ export type BoxProps = {
     margin?: Coordinates;
     padding?: Coordinates;
     background?: string;
+    alignSelf?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
 const coords = (coordinates: Coordinates): [number, number, number, number] => {
@@ -45,6 +46,7 @@ export const box = css<BoxProps>`
                   .join('px ') + 'px'
             : ''};
     background: ${({ background }) => background || ''};
+    align-self: ${({ alignSelf }) => alignSelf || ''};
 `;
 
 const Box = styled.div<BoxProps>`

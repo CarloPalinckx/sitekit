@@ -1,7 +1,7 @@
 import { scale } from './src/lib/colors';
 import chroma from 'chroma-js';
 
-const themeColor = '#541A8B';
+const themeColor = '#8549BC';
 const ctaColor = '#7788EE';
 
 const theme = {
