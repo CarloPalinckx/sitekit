@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { box, BoxProps } from '../components/Box';
-import { motion, MotionProps } from 'framer-motion';
 
 export type FlexProps = {
     flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse' | 'initial' | 'inherit';
@@ -17,9 +16,9 @@ export const flex = css<FlexProps>`
     align-items: ${({ alignItems }) => alignItems || ''};
 `;
 
-type Props = BoxProps & FlexProps & MotionProps;
+type Props = BoxProps & FlexProps;
 
-const Flex = styled(motion.div)<Props>`
+const Flex = styled.div<Props>`
     ${box}
     ${flex}
 `;

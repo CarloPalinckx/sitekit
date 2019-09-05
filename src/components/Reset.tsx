@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import Undraw from 'react-undraw';
+import theme from '../../theme';
 
-Undraw.setDefaultProps({ primaryColor: __THEME__.colors.themecolor.root() });
+Undraw.setDefaultProps({ primaryColor: theme.colors.themecolor.root() });
 
 const Reset = createGlobalStyle`
     body {

@@ -1,9 +1,9 @@
-/// <reference path="../../index.d.ts" />
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import Box, { box, BoxProps } from './Box';
 import Flex, { flex, FlexProps } from './Flex';
 import { button } from './Type';
+import theme from '../../theme';
 
 const Container = styled.nav<FlexProps & BoxProps>`
     ${flex}
@@ -14,11 +14,11 @@ const Item = styled.a`
     ${box}
     ${button}
     text-decoration: none;
-    color: ${__THEME__.colors.darks.lighter(1)};
+    color: ${theme.colors.darks.lighter(1)};
     transition: color 300ms;
 
     &:hover {
-        color: ${__THEME__.colors.themecolor.root()};
+        color: ${theme.colors.themecolor.root()};
     }
 `;
 
