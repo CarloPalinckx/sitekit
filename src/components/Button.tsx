@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 import { button } from './Type';
-import { Scale } from '../lib/colors';
+import { Scale } from '../__types__';
 import chroma from 'chroma-js';
 
 type Props = {
@@ -12,7 +11,7 @@ type Props = {
 type Opts = (mapper: (props: Props & { scale: Scale; color: string }) => string) => (props: Props) => string;
 
 const opts: Opts = mapper => props => {
-    let scale = theme.colors.themecolor;
+    let scale = props.theme.colors.themecolor;
     let color = theme.colors.lights.lightest();
 
     if (props.cta) {
@@ -32,7 +31,7 @@ const Button = styled.button<Props>`
     transition: background-color 300ms;
     cursor: pointer;
     border-radius: 12px;
-    padding: ${theme.spacing * 4}px ${theme.spacing * 6}px;
+    padding: ${({ theme }) => theme.spacing * 4}px ${({ theme }) => theme.spacing * 6}px;
     appearance: none;
     background: ${opts(({ scale }) => scale.root())};
     color: ${opts(({ color }) => color)};

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { storiesOf } from '@storybook/react';
 import Flex from '../src/components/Flex';
-import theme from '../theme';
+import theme from './theme';
 import styled from 'styled-components';
 import Type from '../src/components/Type';
-import { Scale } from 'src/lib/colors';
+import { Scale } from '../src/__types__';
 import chroma from 'chroma-js';
 import Button from '../src/components/Button';
 import { boolean } from '@storybook/addon-knobs';
@@ -88,7 +88,7 @@ const ScaleExample: FC<ScaleExampleProps> = props => {
                 <br />- The suggested value is around 0.30
             </Type>
             <Flex>
-                {props.scale.map(color => (
+                {props.scale.scale.map(color => (
                     <Swatch root={color.toLowerCase() === props.scale.root().toLowerCase()} color={color} />
                 ))}
             </Flex>
@@ -109,7 +109,7 @@ storiesOf('Colors', module)
     .add('Dark text on light background', () => {
         return (
             <Flex width="100%" flexDirection="column">
-                {theme.colors.lights.map(color => {
+                {theme.colors.lights.scale.map(color => {
                     return (
                         <ColorExample
                             background={color}
@@ -128,7 +128,7 @@ storiesOf('Colors', module)
     .add('Light text on coloured background', () => {
         return (
             <Flex width="100%" flexDirection="column">
-                {theme.colors.themecolor.map(color => {
+                {theme.colors.themecolor.scale.map(color => {
                     return (
                         <ColorExample
                             background={color}
@@ -147,7 +147,7 @@ storiesOf('Colors', module)
     .add('Light text on dark background', () => {
         return (
             <Flex width="100%" flexDirection="column">
-                {[...theme.colors.darks].reverse().map(color => {
+                {[...theme.colors.darks.scale].reverse().map(color => {
                     return (
                         <ColorExample
                             background={color}
@@ -171,7 +171,7 @@ storiesOf('Colors', module)
         return (
             <Flex width="100%">
                 <Flex width="50%" flexDirection="column">
-                    {[...theme.colors.darks].reverse().map(color => {
+                    {[...theme.colors.darks.scale].reverse().map(color => {
                         if (color.toLowerCase() === theme.colors.darks.lightest()) return null;
 
                         return (
@@ -188,7 +188,7 @@ storiesOf('Colors', module)
                     })}
                 </Flex>
                 <Flex width="50%" flexDirection="column">
-                    {theme.colors.darks.map(color => {
+                    {theme.colors.darks.scale.map(color => {
                         if (color.toLowerCase() === theme.colors.darks.darkest()) return null;
 
                         return (
@@ -215,7 +215,7 @@ storiesOf('Colors', module)
         return (
             <Flex width="100%">
                 <Flex width="50%" flexDirection="column">
-                    {theme.colors.lights.map(color => {
+                    {theme.colors.lights.scale.map(color => {
                         if (color.toLowerCase() === theme.colors.lights.darkest()) return null;
 
                         return (
@@ -232,7 +232,7 @@ storiesOf('Colors', module)
                     })}
                 </Flex>
                 <Flex width="50%" flexDirection="column">
-                    {[...theme.colors.lights].reverse().map(color => {
+                    {[...theme.colors.lights.scale].reverse().map(color => {
                         if (color.toLowerCase() === theme.colors.lights.lightest()) return null;
 
                         return (
@@ -254,7 +254,7 @@ storiesOf('Colors', module)
     .add('Dark text on coloured background', () => {
         return (
             <Flex width="100%" flexDirection="column">
-                {theme.colors.themecolor.map(color => {
+                {theme.colors.themecolor.scale.map(color => {
                     return (
                         <ColorExample
                             background={color}
@@ -273,7 +273,7 @@ storiesOf('Colors', module)
     .add('Light text on coloured background', () => {
         return (
             <Flex width="100%" flexDirection="column">
-                {theme.colors.themecolor.map(color => {
+                {theme.colors.themecolor.scale.map(color => {
                     return (
                         <ColorExample
                             background={color}

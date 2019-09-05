@@ -1,5 +1,5 @@
-import theme from '../../theme';
 import styled, { css } from 'styled-components';
+import { MotionProps, motion } from 'framer-motion';
 
 type Coordinates = [number] | [number, number] | [number, number, number] | [number, number, number, number];
 
@@ -9,6 +9,7 @@ export type BoxProps = {
     margin?: Coordinates;
     padding?: Coordinates;
     background?: string;
+    borderRadius?: string;
     alignSelf?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
@@ -33,23 +34,26 @@ export const box = css<BoxProps>`
     box-sizing: border-box;
     width: ${({ width }) => width || ''};
     max-width: ${({ maxWidth }) => maxWidth || ''};
-    margin: ${({ margin }) =>
+    margin: ${({ theme, margin }) =>
         margin
             ? coords(margin)
                   .map(coord => coord * theme.spacing)
                   .join('px ') + 'px'
             : ''};
-    padding: ${({ padding }) =>
+    padding: ${({ theme, padding }) =>
         padding
             ? coords(padding)
                   .map(coord => coord * theme.spacing)
                   .join('px ') + 'px'
             : ''};
     background: ${({ background }) => background || ''};
+    border-radius: ${({ borderRadius }) => borderRadius || ''};
     align-self: ${({ alignSelf }) => alignSelf || ''};
 `;
 
-const Box = styled.div<BoxProps>`
+type Props = BoxProps & MotionProps;
+
+const Box = styled(motion.div)<Props>`
     ${box}
 `;
 

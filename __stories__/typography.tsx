@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Type from '../src/components/Type';
 import Flex from '../src/components/Flex';
-import theme from '../theme';
+import theme from './theme';
 import Button from '../src/components/Button';
 
 storiesOf('Typography', module)
