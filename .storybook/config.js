@@ -2,13 +2,17 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import Reset from '../src/components/Reset';
+import { ThemeProvider } from 'styled-components';
+import theme from '../theme';
 
 addDecorator(withKnobs);
 addDecorator(story => (
-    <>
-        <Reset />
-        {story()}
-    </>
+    <ThemeProvider theme={theme}>
+        <>
+            <Reset />
+            {story()}
+        </>
+    </ThemeProvider>
 ));
 
 // automatically import all files ending in *.stories.js

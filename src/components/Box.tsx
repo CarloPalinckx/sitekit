@@ -1,4 +1,3 @@
-import theme from '../../theme';
 import styled, { css } from 'styled-components';
 
 type Coordinates = [number] | [number, number] | [number, number, number] | [number, number, number, number];
@@ -33,13 +32,13 @@ export const box = css<BoxProps>`
     box-sizing: border-box;
     width: ${({ width }) => width || ''};
     max-width: ${({ maxWidth }) => maxWidth || ''};
-    margin: ${({ margin }) =>
+    margin: ${({ theme, margin }) =>
         margin
             ? coords(margin)
                   .map(coord => coord * theme.spacing)
                   .join('px ') + 'px'
             : ''};
-    padding: ${({ padding }) =>
+    padding: ${({ theme, padding }) =>
         padding
             ? coords(padding)
                   .map(coord => coord * theme.spacing)
