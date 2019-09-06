@@ -1,4 +1,3 @@
-/// <reference path="../../index.d.ts" />
 import styled from 'styled-components';
 import { box, BoxProps } from './Box';
 import { flex, FlexProps } from './Flex';
