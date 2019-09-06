@@ -7,6 +7,7 @@ import theme from '../theme';
 import Button from '../src/components/Button';
 import { UndrawArt, UndrawADayAtThePark, UndrawAppreciation } from 'react-undraw';
 import Wrap from '../src/components/Wrap';
+import { Card } from '../src';
 
 storiesOf('Page', module).add('Basic example', () => {
     return (
@@ -42,11 +43,11 @@ storiesOf('Page', module).add('Basic example', () => {
                 <Flex justifyContent="center" alignItems="center">
                     <Flex width="50%" flexDirection="column">
                         <Type scale="h3" color={theme.colors.darks.lighter(1)}>
-                            Come for our chat. Stay for our everything else.
+                            Lorem ipsum dolor sit amet
                         </Type>
                         <Type scale="sub2" color={theme.colors.darks.lighter(3)} margin={[10, 0, 0, 0]}>
-                            Only Intercom gives you a totally customizable messaging suite to drive growth at every
-                            stage of the lifecycle.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi turpis, luctus ut commodo
+                            eu.
                         </Type>
                     </Flex>
                     <Flex width="50%" justifyContent="center">
@@ -65,11 +66,11 @@ storiesOf('Page', module).add('Basic example', () => {
                     </Flex>
                     <Flex width="50%" flexDirection="column">
                         <Type scale="h3" color={theme.colors.darks.lighter(1)}>
-                            Come for our chat. Stay for our everything else.
+                            Lorem ipsum dolor sit
                         </Type>
                         <Type scale="sub2" color={theme.colors.darks.lighter(3)} margin={[10, 0, 0, 0]}>
-                            Only Intercom gives you a totally customizable messaging suite to drive growth at every
-                            stage of the lifecycle.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi turpis, luctus ut commodo
+                            eu.
                         </Type>
                     </Flex>
                 </Flex>
@@ -78,11 +79,11 @@ storiesOf('Page', module).add('Basic example', () => {
                 <Flex justifyContent="center" alignItems="center">
                     <Flex width="50%" flexDirection="column">
                         <Type scale="h3" color={theme.colors.darks.lighter(1)}>
-                            Come for our chat. Stay for our everything else.
+                            Lorem ipsum dolor sit
                         </Type>
                         <Type scale="sub2" color={theme.colors.darks.lighter(3)} margin={[10, 0, 0, 0]}>
-                            Only Intercom gives you a totally customizable messaging suite to drive growth at every
-                            stage of the lifecycle.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi turpis, luctus ut commodo
+                            eu.
                         </Type>
                     </Flex>
                     <Flex width="50%" justifyContent="center">
@@ -93,32 +94,42 @@ storiesOf('Page', module).add('Basic example', () => {
                 </Flex>
             </Wrap>
             <Wrap background={theme.colors.lights.lightest()} padding={[20, 0]} width="100%">
-                <Flex width="33.333333%" alignItems="flex-start" flexDirection="column" padding={[10, 10, 10, 0]}>
-                    <Type scale="h4" color={theme.colors.darks.lighter(1)}>
-                        Product A
-                    </Type>
-                    <Type scale="body1" color={theme.colors.darks.lighter(3)} margin={[5, 0, 10, 0]}>
-                        The cheapest one, this means that you will be spammed with triggers to upgrade.
-                    </Type>
-                    <Button>Sign me up!</Button>
-                </Flex>
-                <Flex width="33.333333%" alignItems="flex-start" flexDirection="column" padding={[10]}>
-                    <Type scale="h4" color={theme.colors.darks.lighter(1)}>
-                        Product B
-                    </Type>
-                    <Type scale="body1" color={theme.colors.darks.lighter(3)} margin={[5, 0, 10, 0]}>
-                        The cheapest one, this means that you will be spammed with triggers to upgrade.
-                    </Type>
-                    <Button>Sign me up!</Button>
-                </Flex>
-                <Flex width="33.333333%" alignItems="flex-start" flexDirection="column" padding={[10]}>
-                    <Type scale="h4" color={theme.colors.darks.lighter(1)}>
-                        Product C
-                    </Type>
-                    <Type scale="body1" color={theme.colors.darks.lighter(3)} margin={[5, 0, 10, 0]}>
-                        The cheapest one, this means that you will be spammed with triggers to upgrade.
-                    </Type>
-                    <Button>Sign me up!</Button>
+                <Flex>
+                    <Flex
+                        justifyContent="center"
+                        flexBasis="500px"
+                        flexShrink={0}
+                        alignItems="flex-start"
+                        flexDirection="column"
+                    >
+                        <Type scale="h4" margin={[0, 0, 5, 0]}>
+                            This is your last chance.
+                        </Type>
+                        <Type scale="body2">
+                            After this, there is no turning back. You take the blue pill—the story ends, you wake up in
+                            your bed and believe whatever you want to believe. You take the red pill—you stay in
+                            Wonderland, and I show you how deep the rabbit hole goes. Remember: all I'm offering is the
+                            truth. Nothing more.
+                        </Type>
+                    </Flex>
+                    <Card alignItems="flex-start" flexDirection="column" padding={[10]} margin={[0, 0, 0, 10]}>
+                        <Type scale="h4" color={theme.colors.darks.lighter(1)} margin={[0, 0, 5, 0]}>
+                            Blue pill
+                        </Type>
+                        <Type scale="body1" color={theme.colors.darks.lighter(3)} margin={[0, 0, 10, 0]}>
+                            The cheapest one, this means that you will be spammed with triggers to upgrade.
+                        </Type>
+                        <Button>Sign me up!</Button>
+                    </Card>
+                    <Card alignItems="flex-start" flexDirection="column" padding={[10]} margin={[0, 0, 0, 10]}>
+                        <Type scale="h4" color={theme.colors.darks.lighter(1)} margin={[0, 0, 5, 0]}>
+                            Red pill
+                        </Type>
+                        <Type scale="body1" color={theme.colors.darks.lighter(3)} margin={[0, 0, 10, 0]}>
+                            The cheapest one, this means that you will be spammed with triggers to upgrade.
+                        </Type>
+                        <Button>Sign me up!</Button>
+                    </Card>
                 </Flex>
             </Wrap>
         </Flex>
