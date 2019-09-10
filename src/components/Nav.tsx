@@ -32,7 +32,7 @@ const Nav: FC<Props> = props => {
             <Box margin={[4, 0, 0, 3]} as="figure">
                 {props.logo}
             </Box>
-            <Flex>
+            <Flex alignSelf="flex-start">
                 {props.items.map(item => {
                     return (
                         <Item href="" padding={[4, 3]}>

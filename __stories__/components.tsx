@@ -5,6 +5,8 @@ import Nav from '../src/components/Nav';
 import Card from '../src/components/Card';
 import Type from '../src/components/Type';
 import theme from '../theme';
+import Image from '../src/components/Image';
+import Box from '../src/components/Box';
 
 storiesOf('Components/Button', module).add('All', () => {
     return (
@@ -38,3 +40,27 @@ storiesOf('Components/Card', module).add('Default', () => {
         </Card>
     );
 });
+
+storiesOf('Components/Image', module)
+    .add('16:9 ratio', () => {
+        return (
+            <Box width="600px">
+                <Image
+                    ratio={[16, 9]}
+                    alt="9:16 ratio image"
+                    src="https://images.unsplash.com/photo-1567972410313-bea9d349d276?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+                />
+            </Box>
+        );
+    })
+    .add('9:16 ratio', () => {
+        return (
+            <Box width="300px">
+                <Image
+                    ratio={[9, 16]}
+                    alt="9:16 ratio image"
+                    src="https://images.unsplash.com/photo-1567995110917-feaa949ef578?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80"
+                />
+            </Box>
+        );
+    });

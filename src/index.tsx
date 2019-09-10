@@ -1,8 +1,12 @@
 import { BoxProps as B } from './components/Box';
 import { FlexProps as F } from './components/Flex';
+import { Scale as S } from './lib/colors';
 
 export type BoxProps = B;
 export type FlexProps = F;
+export type Scale = S;
+
+export { scale } from './lib/colors';
 
 export { default as Box, box } from './components/Box';
 export { default as Button } from './components/Button';
