@@ -1,8 +1,8 @@
 {
-  "name": "sitekit",
+  "name": "ckx-sitekite",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Carlo Palinckx <carlo@mijnwebwinkel.nl>",
+  "author": "Carlo Palinckx <carlopalinckx@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "chroma-js": "^2.0.4",
@@ -45,6 +45,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepare": "yarn build"
   }
 }
