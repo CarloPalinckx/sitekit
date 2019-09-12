@@ -4,6 +4,8 @@
   "main": "index.js",
   "author": "Carlo Palinckx <carlopalinckx@gmail.com>",
   "license": "MIT",
+  "files": ["dist"],
+  "types": "dist/types",
   "peerDependencies": {
     "chroma-js": "^2.0.4",
     "react": "^16.9.0",
@@ -45,7 +47,8 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "types":"tsc -p .",
     "build": "rollup -c",
-    "prepare": "yarn build"
+    "prepare": "yarn types && yarn build"
   }
 }

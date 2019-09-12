@@ -1,13 +1,14 @@
 
 {
+    "files": ["src/index.tsx"],
     "compilerOptions": {
       "baseUrl": ".",
-      "noEmit": true,
+      "declaration": true,
+      "declarationDir":"dist/types",
       "pretty": true,
       "jsx": "preserve",
       "skipLibCheck": true,
       "allowSyntheticDefaultImports": true,
-      "isolatedModules": true,
       "lib": ["dom", "esnext"],
       "strictNullChecks": true,
       "moduleResolution": "node",
