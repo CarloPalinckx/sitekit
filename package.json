@@ -1,7 +1,7 @@
 {
   "name": "ckx-sitekite",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "author": "Carlo Palinckx <carlopalinckx@gmail.com>",
   "license": "MIT",
   "files": ["dist"],

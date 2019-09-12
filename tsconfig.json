@@ -3,6 +3,7 @@
     "files": ["src/index.tsx"],
     "compilerOptions": {
       "baseUrl": ".",
+      "emitDeclarationOnly": true,
       "declaration": true,
       "declarationDir":"dist/types",
       "pretty": true,

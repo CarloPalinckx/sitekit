@@ -8,7 +8,7 @@ module.exports = {
     input: 'src/index.tsx',
     output: {
         name: 'sitekit',
-        file: 'dist/bundle.js',
+        file: 'dist/src/index.js',
         format: 'umd',
         globals: name => name,
     },
