@@ -1,6 +1,5 @@
-import { createGlobalStyle, ThemeContext } from 'styled-components';
-import Undraw from 'react-undraw';
-import React, { useContext, useEffect } from 'react';
+import { createGlobalStyle } from 'styled-components';
+import React from 'react';
 
 const ResetStyles = createGlobalStyle`
     body {
@@ -10,14 +9,6 @@ const ResetStyles = createGlobalStyle`
 `;
 
 const Reset = () => {
-    const theme = useContext(ThemeContext);
-
-    useEffect(() => {
-        Undraw.setDefaultProps({
-            primaryColor: theme.colors.themecolor.root(),
-        });
-    }, []);
-
     return <ResetStyles />;
 };
 
