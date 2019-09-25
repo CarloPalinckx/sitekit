@@ -5,6 +5,8 @@ type Coordinates = [number] | [number, number] | [number, number, number] | [num
 export type BoxProps = {
     width?: string;
     maxWidth?: string;
+    height?: string;
+    maxHeight?: string;
     margin?: Coordinates;
     padding?: Coordinates;
     background?: string;
@@ -32,6 +34,8 @@ export const box = css<BoxProps>`
     box-sizing: border-box;
     width: ${({ width }) => width || ''};
     max-width: ${({ maxWidth }) => maxWidth || ''};
+    height: ${({ height }) => height || ''};
+    max-height: ${({ maxHeight }) => maxHeight || ''};
     margin: ${({ theme, margin }) =>
         margin
             ? coords(margin)
