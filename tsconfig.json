@@ -1,6 +1,6 @@
 
 {
-    "files": ["src/index.tsx"],
+    "include": ["src/index.tsx"],
     "compilerOptions": {
       "baseUrl": ".",
       "emitDeclarationOnly": true,

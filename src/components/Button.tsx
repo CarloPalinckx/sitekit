@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { button } from './Type';
 import { Scale } from '../lib/colors';
 import chroma from 'chroma-js';
-import { Theme } from '../../__types__';
+import { Theme } from '../../index.d';
 
 type Props = {
     cta?: boolean;
