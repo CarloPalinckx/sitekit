@@ -2,12 +2,12 @@
   "name": "ckx-sitekite",
   "version": "1.1.1",
   "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "author": "Carlo Palinckx <carlopalinckx@gmail.com>",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "types": "dist/types",
   "peerDependencies": {
     "chroma-js": "^2.0.4",
     "react": "^16.9.0",

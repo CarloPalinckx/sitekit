@@ -1,8 +1,9 @@
+/// <reference path="../../index.d.ts" />
 import styled from 'styled-components';
 import { button } from './Type';
 import { Scale } from '../lib/colors';
 import chroma from 'chroma-js';
-import { Theme } from '../..';
+import { Theme } from '../../__types__';
 
 type Props = {
     cta?: boolean;
