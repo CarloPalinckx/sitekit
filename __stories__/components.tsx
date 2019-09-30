@@ -63,4 +63,27 @@ storiesOf('Components/Image', module)
                 />
             </Box>
         );
+    })
+    .add('round', () => {
+        return (
+            <Box width="300px">
+                <Image
+                    ratio={[10, 10]}
+                    round
+                    alt="round ratio image"
+                    src="https://images.unsplash.com/photo-1556910633-5099dc3971e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80"
+                />
+            </Box>
+        );
+    })
+    .add('square', () => {
+        return (
+            <Box width="300px">
+                <Image
+                    ratio={[10, 10]}
+                    alt="square ratio image"
+                    src="https://images.unsplash.com/photo-1556910633-5099dc3971e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80"
+                />
+            </Box>
+        );
     });
