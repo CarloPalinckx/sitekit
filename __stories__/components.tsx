@@ -7,6 +7,9 @@ import Type from '../src/components/Type';
 import theme from '../theme';
 import Image from '../src/components/Image';
 import Box from '../src/components/Box';
+import Flex from '../src/components/Flex';
+import TextField from '../src/components/TextField';
+import FormRow from '../src/components/FormRow';
 
 storiesOf('Components/Button', module).add('All', () => {
     return (
@@ -87,3 +90,24 @@ storiesOf('Components/Image', module)
             </Box>
         );
     });
+
+storiesOf('Components/TextField', module).add('Default', () => {
+    return (
+        <Box margin={[10]}>
+            <TextField placeholder="Lorem ipsum" />
+        </Box>
+    );
+});
+
+storiesOf('Components/FormRow', module).add('Default', () => {
+    return (
+        <Box margin={[10]}>
+            <FormRow fieldId="firstname" label="First name">
+                <TextField id="firstname" />
+            </FormRow>
+            <FormRow margin={[5, 0, 0, 0]} fieldId="lastname" label="Last name">
+                <TextField id="lastname" />
+            </FormRow>
+        </Box>
+    );
+});

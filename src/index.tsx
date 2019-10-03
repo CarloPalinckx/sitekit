@@ -14,5 +14,5 @@ export { default as Card } from './components/Card';
 export { default as Flex, flex } from './components/Flex';
 export { default as Nav } from './components/Nav';
 export { default as Reset } from './components/Reset';
-export { default as Type } from './components/Type';
+export { default as Type, h1, h2, h3, h4, h5, h6, sub1, sub2, body1, body2 } from './components/Type';
 export { default as Wrap } from './components/Wrap';
