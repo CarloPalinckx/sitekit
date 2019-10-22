@@ -7,8 +7,8 @@ import Type from '../src/components/Type';
 import theme from '../theme';
 import Image from '../src/components/Image';
 import Box from '../src/components/Box';
-import Flex from '../src/components/Flex';
 import TextField from '../src/components/TextField';
+import TextArea from '../src/components/TextArea';
 import FormRow from '../src/components/FormRow';
 
 storiesOf('Components/Button', module).add('All', () => {
@@ -98,7 +98,13 @@ storiesOf('Components/TextField', module).add('Default', () => {
         </Box>
     );
 });
-
+storiesOf('Components/TextArea', module).add('Default', () => {
+    return (
+        <Box margin={[10]}>
+            <TextArea placeholder="Lorem ipsum" />
+        </Box>
+    );
+});
 storiesOf('Components/FormRow', module).add('Default', () => {
     return (
         <Box margin={[10]}>

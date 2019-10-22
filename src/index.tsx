@@ -16,3 +16,6 @@ export { default as Nav } from './components/Nav';
 export { default as Reset } from './components/Reset';
 export { default as Type, h1, h2, h3, h4, h5, h6, sub1, sub2, body1, body2 } from './components/Type';
 export { default as Wrap } from './components/Wrap';
+export { default as TextField } from './components/TextField';
+export { default as TextArea } from './components/TextArea';
+export { default as FormRow } from './components/FormRow';

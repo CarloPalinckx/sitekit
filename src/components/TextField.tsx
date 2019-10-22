@@ -1,12 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { body1 } from './Type';
 import { BoxProps, box } from './Box';
 
-const TextField = styled.input.attrs({
-    type: 'text',
-    placeholder: 'Lorem ipsum',
-})<BoxProps>`
-    ${box}
+export const fieldStyles = css`
     ${body1}
     padding: 12px;
     appearance: none;
@@ -15,11 +11,14 @@ const TextField = styled.input.attrs({
     color: ${({ theme }) => theme.colors.darks.lighter(1)};
 
     &:focus {
-        box-shadow: ${({ theme }) => {
-            return `0 0 5px 1px rgba(0,0,0,0.1)`;
-        }};
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
         outline: none;
     }
+`;
+
+const TextField = styled.input.attrs({ type: 'text' })<BoxProps>`
+    ${box}
+    ${fieldStyles}
 `;
 
 export default TextField;
