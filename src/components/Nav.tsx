@@ -23,7 +23,7 @@ const Item = styled.a`
 
 type Props = {
     logo: ReactNode;
-    items: Array<string>;
+    items: Array<{ title: string; url: string }>;
 };
 
 const Nav: FC<Props> = props => {
@@ -33,10 +33,10 @@ const Nav: FC<Props> = props => {
                 {props.logo}
             </Box>
             <Flex alignSelf="flex-start">
-                {props.items.map(item => {
+                {props.items.map((item, index) => {
                     return (
-                        <Item href="" padding={[4, 3]}>
-                            {item}
+                        <Item key={index} href={item.url} padding={[4, 3]}>
+                            {item.title}
                         </Item>
                     );
                 })}
